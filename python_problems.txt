@@ -1,0 +1,62 @@
+1. Imagine you're developing a feature for a music streaming app. You have a playlist, represented as a sorted list of song IDs, but due to a bug, some songs have been duplicated. You need to "clean up" this playlist so that each unique song appears only once, while maintaining the original order of the songs.
+
+Your task is to write a function that takes this playlist (an array of song IDs) and modifies it in place to remove the duplicates. After your function runs, the beginning of the array should contain only the unique song IDs, in their original relative order. Finally, your function should return the total number of unique songs found in the playlist. The remaining elements in the array after the unique songs don't matter.
+
+For example, if your playlist is [101, 101, 102, 103, 103, 103, 104], your function should transform it into [101, 102, 103, 104, _, _, _] (the underscores represent irrelevant values) and return 4, because there are four unique songs.
+
+This is critical because the app's playback engine relies on a clean list of unique song IDs to function correctly and avoid playing the same song multiple times in a row.
+
+2. Imagine you're developing a data visualization tool for a financial analytics company. One of the common operations analysts perform is viewing data in different orientations.
+
+Currently, you're working on a feature that displays a financial spreadsheet or a grid of stock prices over time. This data is represented as a 2D array, where rows might represent different stocks and columns might represent daily closing prices for those stocks.
+
+However, some analysts prefer to see the data transposed, meaning they want to view the daily prices as rows and the different stocks as columns. This "flip" allows them to quickly compare stock performance on a given day across all stocks, rather than tracking one stock's performance over time.
+
+Your task is to write a function that takes this 2D array representing the financial data and returns its transpose. This means you need to swap the row and column indices of the original matrix to create a new one.
+
+For example, if your initial data matrix looks like this:
+
+Stock A: [100, 102, 105]  (Day 1, Day 2, Day 3 prices for Stock A)
+Stock B: [ 50,  51,  49]  (Day 1, Day 2, Day 3 prices for Stock B)
+represented as [[100, 102, 105], [50, 51, 49]], your function should return the transposed matrix:
+
+Day 1 Prices: [100, 50]
+Day 2 Prices: [102, 51]
+Day 3 Prices: [105, 49]
+represented as [[100, 50], [102, 51], [105, 49]]. This transposed view will be presented to the user in the data visualization tool, providing them with a more flexible way to analyze the financial data.
+
+3. Imagine you're developing a user registration system for a popular online service. When a new user tries to sign up, they need to choose a unique username.
+
+Your task is to implement a function that checks for duplicate usernames in your existing database of registered users. The database is represented as an array of strings (usernames).
+
+When a new user submits their desired username, your system needs to quickly determine if that username, or any other username already in the database, has been used more than once.
+
+Specifically, your function will take an array of usernames (nums) and should return true if any username appears at least twice in the array, indicating a duplicate. If every username in the array is distinct (meaning no duplicates), the function should return false.
+
+For example:
+
+If a user tries to register with ["john_doe", "jane_smith", "john_doe", "alice_wonder"], your function should return true because "john_doe" appears twice. This would prevent the new user from registering with that duplicate username.
+
+If the current registered usernames are ["user123", "coder_gal", "tech_wiz"], your function should return false because all usernames are distinct, allowing a new user to pick one of these (if it's not taken by someone else registering simultaneously, which is a separate concern).
+
+4. Imagine you're developing a dynamic pricing engine for an e-commerce platform that sells various electronic gadgets. Your platform often runs promotions and special deals.
+
+One common promotional strategy is to offer a "Buy One, Get the Second Half Off" or "Buy One, Get Another for a Fraction of the Price" deal, specifically targeting scenarios where one product's price is exactly double another's. This helps to move inventory or encourage bundles.
+
+Your task is to implement a system that can quickly identify if such a promotional opportunity exists within your current inventory's pricing. You are given an array arr which represents the current prices of all the products in your inventory.
+
+Your function should check if there are any two distinct products (at different indices i and j) in your inventory such that the price of one product (arr[i]) is exactly double the price of another product (arr[j]).
+
+Specifically:
+
+You need to find if there exist two different product indices, i and j (where i is not equal to j), within your price list.
+
+The price of the product at index i (arr[i]) must be exactly twice the price of the product at index j (arr[j]).
+
+If such a pair of products exists, your function should return true, indicating that a "double price" promotional opportunity is available. Otherwise, it should return false.
+
+For example:
+
+If your product prices are [100, 20, 50, 30]:
+
+Your system would identify that a product priced at 100 (at index 0) is double the price of a product priced at 50 (at index 2). So, it would return true. This could trigger a suggestion to offer a deal like "Buy our Smartwatch at ₹100 and get our Bluetooth Earbuds at ₹50 (half price of the smartwatch!)".
